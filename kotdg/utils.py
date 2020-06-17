@@ -11,7 +11,7 @@ resourcedir = (basedir / '../resources/').resolve()
 
 
 # Ideally you wouldn't need this
-def ko_decompose(character):
+def decompose_hangul(character):
     """ Decompose single hangul character to letters """
     assert type(character) is str and len(character) == 1
     # assert ord(u'가') <= chr(character) and chr(character) <= ord(u'힣')
@@ -38,7 +38,7 @@ def ko_load_dict(dict_path):
     """ Read the dictionary file and returns all words in it. """
     lang_dict = []
     with open(
-       resourcedir/ 'dicts' / dict_path,
+        resourcedir / 'dicts' / dict_path,
         "r",
         encoding="utf8",
         errors="ignore",
